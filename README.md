@@ -2,6 +2,8 @@ Pageroll 0.1.0
 ======
 Theme Name:     Pageroll
 
+Theme URI:      Not yet developed
+
 Author:         Star Verte LLC
 
 Author URI:     http://starverte.com/
