@@ -1,4 +1,4 @@
-Pageroll 0.1.0
+Pageroll 0.0.0
 ======
 Theme Name:     Pageroll
 
@@ -12,7 +12,7 @@ Description:    Child theme for Flint; used to display a single webpage with mul
 
 Template:       flint
 
-Version:        0.1.0
+Version:        0.0.0
 
 License:        GPLv3
 
