@@ -1,13 +1,21 @@
 Pageroll 0.1.0
 ======
 Theme Name:     Pageroll
+
 Author:         Star Verte LLC
+
 Author URI:     http://starverte.com/
+
 Description:    Child theme for Flint; used to display a single webpage with multiple Pages, navigable using a fixed navigation bar.
+
 Template:       flint
+
 Version:        0.1.0
+
 License:        GPLv3
+
 License URI:    license.txt
+
 Tags:           sparks
 
 A spark sets a fire ablaze, and similarly the Sparks Framework is made up of 'sparks' that help initiate the creative process of website development within WordPress. Often times to start a fire, a person uses flint and steel. With the Sparks Framework it is the same way. 'Flint' (the core theme) and 'Steel' (the core plugin) makeup the foundation of the framework. Then, additional child themes and plugins extend the functionality and user experience.
