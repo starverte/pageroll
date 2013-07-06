@@ -29,3 +29,19 @@ A spark sets a fire ablaze, and similarly the Sparks Framework is made up of 'sp
 */
 
 @import url("../flint/style.css");
+
+#masthead {
+    background: #512888;
+}
+h1,h2,h3,h4,h5,h6,
+a, a:hover, a:focus {
+	color: #512888;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #512888;
+  background-image: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: none;
+}
