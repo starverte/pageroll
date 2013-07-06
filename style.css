@@ -5,7 +5,7 @@ Author:         Star Verte LLC
 Author URI:     http://starverte.com/
 Description:    Child theme for Flint; used to display a single webpage with multiple Pages, navigable using a fixed navigation bar.
 Template:       flint
-Version:        0.0.0
+Version:        0.1.0
 License:        GPLv3
 License URI:    license.txt
 Tags:           sparks
@@ -29,3 +29,32 @@ A spark sets a fire ablaze, and similarly the Sparks Framework is made up of 'sp
 */
 
 @import url("../flint/style.css");
+
+#masthead {
+	background: #512888;
+}
+.logo {
+	padding: 20px;
+}
+article:focus {
+	outline: none;
+}
+h1,h2,h3,h4,h5,h6,
+a, a:hover, a:focus {
+	color: #512888;
+}
+.site-branding {
+	margin-top: 30px;
+	text-align: center;
+}
+.site-branding h3 {
+	color: #fff;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #512888;
+  background-image: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: none;
+}
