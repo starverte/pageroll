@@ -52,12 +52,6 @@ else {
 				<img src="<?php header_image(); ?>" alt="" />
 			</a>
 		<?php } /* if ( ! empty( $header_image ) ) */ ?>
-        <div class="span9">
-            <div class="site-branding span5 offset6">
-            	<h3>Owner-Operators Wanted</h3>
-                <a class="btn btn-large btn-block" href="">Apply Now</a>
-            </div>
-        </div>
 		</hgroup>
 	<?php } /* if (current_theme_supports('custom-header')) */ ?>
     
