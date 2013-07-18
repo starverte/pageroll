@@ -52,12 +52,6 @@ else {
 				<img src="<?php header_image(); ?>" alt="" />
 			</a>
 		<?php } /* if ( ! empty( $header_image ) ) */ ?>
-        <div class="span9 visible-desktop" id="app-btn">
-            <div class="site-branding span5 offset6">
-            	<h3>Owner-Operators Wanted</h3>
-                <a class="btn btn-large btn-block" href="<?php echo esc_url( home_url( '/driverapp' ) ); ?>">Apply Now</a>
-            </div>
-        </div>
 		</hgroup>
 	<?php } /* if (current_theme_supports('custom-header')) */ ?>
     
@@ -79,15 +73,6 @@ else {
                     
                     <div class="nav-collapse collapse">
                     	<?php wp_nav_menu( array( 'menu_class' => 'nav', 'container' => false, 'theme_location' => 'primary', 'walker' => new Pageroll_Bootstrap_Menu ) ); ?>
-                        <form id="app-btn" class="navbar-form pull-right hidden-desktop">
-                          <a class="btn btn-large btn-block" href="<?php echo esc_url( home_url( '/driverapp' ) ); ?>">Driver Application</a>
-                        </form>
-                        <?php if ( is_user_logged_in() ) { ?>
-                        <form class="navbar-form pull-right">                          
-							<a class="btn btn-large btn-block hidden-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a>
-                        	<a class="btn visible-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a>
-                        </form>
-                        <?php } ?>
                     </div><!-- .nav-collapse -->
                 </div><!-- .container -->
             </div><!-- .navbar-inner -->
