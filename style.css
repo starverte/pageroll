@@ -58,9 +58,6 @@ a, a:hover, a:focus {
   border-radius: 0;
   border: none;
 }
-.page-template-app-php #app-btn {
-	display: none!important;
-}
 @media (max-width: 767px) {
   body {
     padding-left: 0;
