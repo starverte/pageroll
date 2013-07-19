@@ -25,26 +25,33 @@ get_header(); ?>
                     </header><!-- .entry-header -->
                 
                     <div class="entry-content">
-                    <?php if ( is_user_logged_in() ) { ?>
+                    <?php if ( is_user_logged_in() ) {
+						global $current_user;
+      					get_currentuserinfo(); ?>
                         <form class="form-horizontal">
                           <div class="control-group">
-                            <label class="control-label" for="inputEmail">Email</label>
+                            <label class="control-label">Name</label>
                             <div class="controls">
-                              <input type="text" id="inputEmail" placeholder="Email">
+                              <input type="text" id="user_firstname" placeholder="First" value="<?php echo $current_user->user_firstname; ?>">
+                              <input class="input-mini" maxlength="1" type="text" id="user_middle" placeholder="M.I." value="">
+                              <input type="text" id="user_lastname" placeholder="Last" value="<?php echo $current_user->user_lastname; ?>">
                             </div>
                           </div>
                           <div class="control-group">
-                            <label class="control-label" for="inputPassword">Password</label>
+                            <label class="control-label" for="user_email">Email</label>
                             <div class="controls">
-                              <input type="password" id="inputPassword" placeholder="Password">
+                              <input type="email" id="user_email" placeholder="Email" value="<?php echo $current_user->user_email; ?>">
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="control-label" for="user_birthdate">Birthdate</label>
+                            <div class="controls">
+                              <input type="date" id="user_birthdate" placeholder="mm/dd/yyyy">
                             </div>
                           </div>
                           <div class="control-group">
                             <div class="controls">
-                              <label class="checkbox">
-                                <input type="checkbox"> Remember me
-                              </label>
-                              <button type="submit" class="btn">Sign in</button>
+                              <button type="submit" class="btn">Save</button>
                             </div>
                           </div>
                         </form>
