@@ -57,8 +57,8 @@ class Pageroll_Bootstrap_Menu extends Walker_Nav_Menu {
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'      . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="'     . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'        . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= 								  ' href="#post-' . esc_attr( $item->object_id  ) .'"';
-		$attributes .= ($args->has_children) 	    ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
+		$attributes .=																' href="' . esc_url( home_url('/') ) . '#post-' . esc_attr( $item->object_id  ) .'"';
+		$attributes .= ($args->has_children) 	    	?	' class="dropdown-toggle" data-toggle="dropdown"' : '';
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
