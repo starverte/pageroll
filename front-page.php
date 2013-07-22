@@ -19,6 +19,7 @@ get_header(); ?>
 				$nav = wp_get_nav_menu_object( $locations[ 'primary' ] );
 				$nav_items = wp_get_nav_menu_items($nav->term_id); }
 				$n = count($nav_items); $i = 0;
+				$pages = '';
 				foreach ( (array) $nav_items as $key => $nav_item ) {
 					if(++$i === $n) { $pages .= $nav_item->object_id; }
 					else {$pages .= $nav_item->object_id . ', '; }
@@ -29,8 +30,6 @@ get_header(); ?>
 					<?php get_template_part( 'content', 'page' ); ?>
 
 				<?php endforeach; // end of the loop. ?>
-        
-        <?php flint_content_nav( 'nav-below' ); ?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
