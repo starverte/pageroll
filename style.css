@@ -63,7 +63,7 @@ a, a:hover, a:focus {
 }
 .help-inline.help-before {
   padding-left: 0;
-  padding-right: 5px;
+  padding-right: 20px;
 }
 .btn-primary{background-color:#512888;background-image:-moz-linear-gradient(top, #472787, #672787);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#472787), to(#672787));background-image:-webkit-linear-gradient(top, #472787, #672787);background-image:-o-linear-gradient(top, #472787, #672787);background-image:linear-gradient(to bottom, #472787, #672787);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff472787', endColorstr='#ff672787', GradientType=0);border-color:#672787 #672787 #002a80;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*background-color:#672787;}
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{color:#ffffff;background-color:#672787;*background-color:#54206e;}.btn-primary:active,.btn-primary.active{background-color:#401854 \9;}
