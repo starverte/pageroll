@@ -31,8 +31,8 @@
                     	<?php wp_nav_menu( array( 'menu_class' => 'nav', 'container' => false, 'theme_location' => 'primary', 'walker' => new Pageroll_Bootstrap_Menu ) ); ?>
                         <?php if ( is_user_logged_in() ) { ?>
                         <form class="navbar-form pull-right">                          
-													<a class="btn btn-large btn-block hidden-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a>
-                        	<a class="btn visible-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>">Logout</a>
+													<a class="btn btn-large btn-block hidden-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>"><i class="icon-remove"></i> Logout</a>
+                        	<a class="btn visible-desktop" href="<?php echo wp_logout_url( get_permalink() ); ?>"><i class="icon-remove"></i> Logout</a>
                         </form>
                         <?php } ?>
                     </div><!-- .nav-collapse -->
