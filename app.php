@@ -15,12 +15,11 @@ get_header(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <header class="entry-header">
             <h1 class="entry-title"><?php the_title(); ?></h1>
-            <p>You may save your progress and come back at anytime.</p>
+            <p>You may save your progress and come back at anytime. <a href="<?php echo wp_lostpassword_url( get_permalink() ); ?>" title="Reset Password">Click here</a> to change your password.</p>
           </header><!-- .entry-header -->
           
           <div class="entry-content">
-						<?php if ( is_user_logged_in() ) {
-							$united_states = array('AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'); ?>
+						<?php if ( is_user_logged_in() ) { ?>
               
 							<div class="accordion" id="app-accordion">
               
