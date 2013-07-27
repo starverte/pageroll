@@ -16,21 +16,28 @@
             					<?php if (isset($_POST['basic-info-save']) and ($_POST['basic-info-save'] == "invalid")) { ?> <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>Uh-oh.</strong> Let's try that again.</div><?php } ?>
                       <form class="form-horizontal" id="basic-info-form" action="<?php echo get_permalink(); ?>" method="post">
                       
-											<?php global $current_user;
+											<?php $united_states = array('AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY');
+                      global $current_user;
 											get_currentuserinfo();
 											$user_id = $current_user->ID;
-                      if (isset($_POST['user_firstname']))			{  update_user_meta($user_id, 'first_name',			$_POST['user_firstname']); }
-                      if (isset($_POST['user_middle']))					{  update_user_meta($user_id, 'middle',					$_POST['user_middle']); }
-                      if (isset($_POST['user_lastname']))				{  update_user_meta($user_id, 'last_name',			$_POST['user_lastname']); }
-                      if (isset($_POST['user_streetaddress']))	{  update_user_meta($user_id, 'street_address',	$_POST['user_streetaddress']); }
-                      if (isset($_POST['user_city']))						{  update_user_meta($user_id, 'city',						$_POST['user_city']); }
-                      if (isset($_POST['user_state']))					{  update_user_meta($user_id, 'state',					$_POST['user_state']); }
-                      if (isset($_POST['user_zip']))						{  update_user_meta($user_id, 'zip',						$_POST['user_zip']); }
-                      if (isset($_POST['user_address_months']))	{  update_user_meta($user_id, 'address_months',	$_POST['user_address_months']); }
-                      if (isset($_POST['user_birthdate'])) 			{
-												$user_birthdate = $_POST['user_birthdate'] . ' ' . '12:00 AM';
+                      if (!empty($_POST['user_firstname']))				{  update_user_meta($user_id, 'first_name',			$_POST['user_firstname']); }
+                      if (!empty($_POST['user_middle']))					{  update_user_meta($user_id, 'middle',					$_POST['user_middle']); }
+                      if (!empty($_POST['user_lastname']))				{  update_user_meta($user_id, 'last_name',			$_POST['user_lastname']); }
+                      if (!empty($_POST['user_streetaddress']))		{  update_user_meta($user_id, 'street_address',	$_POST['user_streetaddress']); }
+                      if (!empty($_POST['user_city']))						{  update_user_meta($user_id, 'city',						$_POST['user_city']); }
+                      if (!empty($_POST['user_state']))						{  update_user_meta($user_id, 'state',					$_POST['user_state']); }
+                      if (!empty($_POST['user_zip']))							{  update_user_meta($user_id, 'zip',						$_POST['user_zip']); }
+											
+                      if (!empty($_POST['user_time_address']))		{
+												if ($_POST['user_time_address_units'] == 'months')		{ $time_address = $_POST['user_time_address']; }
+												if ($_POST['user_time_address_units'] == 'years')	{ $time_address = $_POST['user_time_address']*12; }
+												update_user_meta($user_id, 'time_address', $time_address);
+											} /* if (!empty($_POST['user_time_address'])) */
+											
+                      if (!empty($_POST['user_birthdate'])) 			{
+												$user_birthdate = str_replace('-', '/', $_POST['user_birthdate']);
 												update_user_meta($user_id, 'birthdate', strtotime($user_birthdate));
-                      } /* if (isset($_POST['user_birthdate'])) */ ?>
+                      } /* if (!empty($_POST['user_birthdate'])) */ ?>
                       
                       	<div class="control-group"></div>
                       
@@ -65,14 +72,15 @@
                         
                         <div class="control-group">
                           <div class="controls">
-                            <span class="help-inline help-before">How long have you lived at this address? </span><input class="input-mini" type="date" name="user_address_months" value="<?php echo get_user_meta ($user_id, 'address_months', true); ?>"><span class="help-inline">months</span>
+                            <span class="help-inline help-before">How long have you lived at this address? </span><input class="input-mini" type="date" name="user_time_address" value="<?php $user_time_address = get_user_meta ($user_id, 'time_address', true)/12; echo number_format($user_time_address, 2)	; ?>">
+                            <select class="input-small" name="user_time_address_units"><option value="years">years</option><option value="months">months</option></select>
                           </div><!-- .controls -->
                         </div><!-- .control-group -->
                         
                         <div class="control-group">
                           <label class="control-label" for="user_birthdate">Birthdate</label>
                           <div class="controls">
-                            <input class="input-small" type="date" name="user_birthdate" placeholder="mm/dd/yyyy" value="<?php $birthdate = get_user_meta ($user_id, 'birthdate', true); if ($birthdate != ''){  echo date( 'm/d/Y', $birthdate );} ?>">
+                            <input class="input-small" type="date" name="user_birthdate" placeholder="mm/dd/yyyy" value="<?php $birthdate = get_user_meta ($user_id, 'birthdate', true); if (!empty($birthdate)){  echo date( 'm/d/Y', $birthdate );} ?>">
                           </div><!-- .controls -->
                         </div><!-- .control-group -->
                         
