@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-  	<div id="primary" class="content-area span9">
+  	<div id="primary" class="content-area col-lg-10 col-sm-10 col-offset-1">
 			<div id="content" class="site-content" role="main">
             <?php if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ 'primary' ] ) ) {
 				$nav = wp_get_nav_menu_object( $locations[ 'primary' ] );
@@ -33,6 +33,5 @@ get_header(); ?>
 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
-
-<?php get_sidebar(); ?>
+    
 <?php get_footer(); ?>
