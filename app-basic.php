@@ -39,23 +39,22 @@
 												update_user_meta($user_id, 'birthdate', strtotime($user_birthdate));
                       } /* if (!empty($_POST['user_birthdate'])) */ ?>
                       
-                      	<div class="control-group"></div>
-                      
-                        <div class="control-group">
-                          <label class="control-label">Name</label>
-                          <div class="controls">
-                            <input type="text" name="user_firstname" placeholder="First" value="<?php echo get_user_meta ($user_id, 'first_name', true); ?>">
-                            <input class="input-mini" maxlength="1" type="text" name="user_middle" placeholder="M.I." value="<?php echo get_user_meta ($user_id, 'middle', true); ?>">
-                            <input type="text" name="user_lastname" placeholder="Last" value="<?php echo get_user_meta ($user_id, 'last_name', true); ?>">
-                          </div><!-- .controls -->
-                        </div><!-- .control-group -->
+                        <div class="form-group">
+                          <label class="col-lg-2 col-sm-2 control-label">Name</label>
+                          <div class="col-lg-4 col-sm-4 col-4"><input class="form-control" type="text" name="user_firstname" placeholder="First" value="<?php echo get_user_meta ($user_id, 'first_name', true); ?>"></div>
+                          <div class="col-lg-1 col-sm-2 col-3"><input class="form-control" maxlength="1" type="text" name="user_middle" placeholder="M.I." value="<?php echo get_user_meta ($user_id, 'middle', true); ?>"></div>
+                          <div class="col-lg-5 col-sm-4 col-4"><input class="form-control" type="text" name="user_lastname" placeholder="Last" value="<?php echo get_user_meta ($user_id, 'last_name', true); ?>"></div>
+                        </div><!-- .form-group -->
                         
-                        <div class="control-group">
-                          <label class="control-label" for="user_streetaddress">Street Address</label>
-                          <div class="controls">
-                            <input type="text" name="user_streetaddress" placeholder="1234 Anystreet Drive" value="<?php echo get_user_meta ($user_id, 'street_address', true); ?>">
-                            <input class="input-medium" type="text" name="user_city" placeholder="City" value="<?php echo get_user_meta ($user_id, 'city', true); ?>">
-                            <select class="input-small" name="user_state">
+                        <div class="form-group">
+                          <label class="col-lg-2 col-sm-2 control-label" for="user_streetaddress">Street Address</label>
+                          <div class="col-lg-10 col-sm-10"><input class="form-control" type="text" name="user_streetaddress" placeholder="1234 Anystreet Drive" value="<?php echo get_user_meta ($user_id, 'street_address', true); ?>"></div>
+                        </div><!-- .form-group -->
+                        
+                        <div class="form-group">
+                          <label class="col-lg-2 col-sm-2 control-label"></label>
+                          <div class="col-lg-4 col-sm-4 col-4"><input class="form-control" type="text" name="user_city" placeholder="City" value="<?php echo get_user_meta ($user_id, 'city', true); ?>"></div>
+                          <div class="col-lg-2 col-sm-2 col-4"><select class="form-control" name="user_state">
                               <option value="">State</option>
                               <?php
                               $user_state = get_user_meta ($user_id, 'state', true);
@@ -65,31 +64,29 @@
                                 . '>'. $united_state . '</option>';
                               }
                               ?>
-                            </select>
-                            <input class="input-small" type="text" name="user_zip" placeholder="Zip Code" value="<?php echo get_user_meta ($user_id, 'zip', true); ?>">
-                          </div><!-- .controls -->
-                        </div><!-- .control-group -->
+                            </select></div>
+                          <div class="col-lg-4 col-sm-4 col-4"><input class="form-control" type="text" name="user_zip" placeholder="Zip Code" value="<?php echo get_user_meta ($user_id, 'zip', true); ?>"></div>
+                        </div><!-- .form-group -->
                         
-                        <div class="control-group">
-                          <div class="controls">
-                            <span class="help-inline help-before">How long have you lived at this address? </span><input class="input-mini" type="date" name="user_time_address" value="<?php $user_time_address = get_user_meta ($user_id, 'time_address', true)/12; echo number_format($user_time_address, 2)	; ?>">
-                            <select class="input-small" name="user_time_address_units"><option value="years">years</option><option value="months">months</option></select>
-                          </div><!-- .controls -->
-                        </div><!-- .control-group -->
+                        <div class="form-group">
+                        	<div class="col-lg-2 col-sm-2"></div>
+                          <label class="col-lg-4 col-sm-6 control-label" for="user_time_address">How long have you lived at this address?</label>
+                          <div class="col-lg-4 col-sm-2 col-6"><input class="form-control" type="number" name="user_time_address" value="<?php $user_time_address = get_user_meta ($user_id, 'time_address', true)/12; echo number_format($user_time_address, 2)	; ?>"></div>
+                          <div class="col-lg-2 col-sm-2 col-6"><select class="form-control" name="user_time_address_units"><option value="years">years</option><option value="months">months</option></select></div>
+                        </div><!-- .form-group -->
                         
-                        <div class="control-group">
-                          <label class="control-label" for="user_birthdate">Birthdate</label>
-                          <div class="controls">
-                            <input class="input-small" type="date" name="user_birthdate" placeholder="mm/dd/yyyy" value="<?php $birthdate = get_user_meta ($user_id, 'birthdate', true); if (!empty($birthdate)){  echo date( 'm/d/Y', $birthdate );} ?>">
-                          </div><!-- .controls -->
-                        </div><!-- .control-group -->
+                        <div class="form-group">
+                          <label class="col-lg-2 col-sm-2 control-label" for="user_birthdate">Birthdate</label>
+                          <div class="col-lg-10 col-sm-10"><input class="form-control" type="date" name="user_birthdate" placeholder="mm/dd/yyyy" value="<?php $birthdate = get_user_meta ($user_id, 'birthdate', true); if (!empty($birthdate)){  echo date( 'm/d/Y', $birthdate );} ?>"></div>
+                        </div><!-- .form-group -->
                         
-                        <div class="control-group">
-                          <div class="controls">
+                        <div class="form-group">
+                        	<div class="col-lg-2 col-sm-2"></div>
+                          <div class="col-lg-10 col-sm-10">
                           	<input name="basic-info-save" type="hidden" value="saved">
                             <button type="submit" class="btn btn-primary">Save</button>
-                          </div><!-- .controls -->
-                        </div><!-- .control-group -->
+                          </div>
+                        </div><!-- .form-group -->
                         
                       </form><!-- #basic-info-form -->
                     </div><!-- .accordion-inner -->
