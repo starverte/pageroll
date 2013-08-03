@@ -12,4 +12,4 @@ is_front_page() || is_home() ? get_template_part ( 'header' , 'front' ) : get_te
 
 	</header><!-- #masthead -->
 
-	<div id="main" class="site-main container-fluid">
+	<div id="main" class="site-main container">
