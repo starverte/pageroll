@@ -4,7 +4,8 @@
  *
  * Displays "Driver Profile" section.
  *
- * @package Flint\Pageroll
+ * @package Flint
+ * @sub-package Pageroll
  */
 ?>
 								<div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#app-accordion" href="#driver-profile"><i class="icon-road"></i> Driver Profile</a></div>

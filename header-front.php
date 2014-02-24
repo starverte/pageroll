@@ -4,7 +4,8 @@
  *
  * Displays all of the <head> section and everything from <div id="page"> through <div>
  *
- * @package Flint\Pageroll
+ * @package Flint
+ * @sub-package Pageroll
  */
 ?>
 <div id="page" class="hfeed site">
