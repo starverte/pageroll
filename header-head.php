@@ -4,8 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="fb-root">
  *
- * @package Flint
- * @sub-package Pageroll
+ * @package Flint\Pageroll
  */
 ?><!DOCTYPE html>
 <!--[if lt IE 9]><html <?php language_attributes(); ?> class="ie"><![endif]-->

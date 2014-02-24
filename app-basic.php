@@ -4,8 +4,7 @@
  *
  * Displays "Basic Information" section.
  *
- * @package Flint
- * @sub-package Pageroll
+ * @package Flint\Pageroll
  */
 ?>
                 <div class="accordion-heading"><a class="accordion-toggle" data-toggle="collapse" data-parent="#app-accordion" href="#basic-info"><i class="icon-user"></i> Basic Information</a></div>

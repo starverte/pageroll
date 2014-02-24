@@ -6,8 +6,7 @@
  * whether the front page displays the Blog Posts Index
  * or a static page.
  *
- * @package Flint
- * @sub-package Pageroll
+ * @package Flint\Pageroll
  *
  */
 

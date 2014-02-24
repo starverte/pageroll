@@ -2,8 +2,7 @@
 /**
  * Flint functions and definitions
  *
- * @package Flint
- * @sub-package Pageroll
+ * @package Flint\Pageroll
  */
  
 /**
