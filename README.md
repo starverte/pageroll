@@ -1,6 +1,6 @@
-Pageroll 0.1.0
+Pageroll 0.2.0
 ======
-Theme Name:     Pageroll
+Theme Name:     Pageroll (for Driveby Transport)
 
 Theme URI:      Not yet developed
 
@@ -12,7 +12,7 @@ Description:    Child theme for Flint; used to display a single webpage with mul
 
 Template:       flint
 
-Version:        0.1.0
+Version:        0.2.0
 
 License:        GPLv3
 

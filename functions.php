@@ -7,13 +7,21 @@
  */
  
 /**
+ * Enqueue driver app scripts
+ */
+add_action( 'wp_enqueue_scripts', 'pageroll_scripts' );
+function pageroll_scripts() {
+	if ( is_page_template('app.php') ) { wp_enqueue_script( 'driver-app', get_stylesheet_directory_uri() . '/js/driverapp.js', array('jquery') , theme_version() , true ); } // Load front-end scripts
+}
+ 
+/**
  * Extended Walker class for use with the
  * Twitter Bootstrap toolkit Dropdown menus in Wordpress.
  * Edited to support n-levels submenu.
  * @author johnmegahan https://gist.github.com/1597994, Emanuele 'Tex' Tessore https://gist.github.com/3765640
  */
 class Pageroll_Bootstrap_Menu extends Walker_Nav_Menu {
-	function start_lvl( &$output, $depth ) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 
 		$indent = str_repeat( "\t", $depth );
 		$submenu = ($depth > 0) ? ' sub-menu' : '';
@@ -57,8 +65,8 @@ class Pageroll_Bootstrap_Menu extends Walker_Nav_Menu {
 		$attributes  = ! empty( $item->attr_title ) ? ' title="'      . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target )     ? ' target="'     . esc_attr( $item->target     ) .'"' : '';
 		$attributes .= ! empty( $item->xfn )        ? ' rel="'        . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes .= 								  ' href="#post-' . esc_attr( $item->object_id  ) .'"';
-		$attributes .= ($args->has_children) 	    ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
+		$attributes .=																' href="' . esc_url( home_url('/') ) . '#post-' . esc_attr( $item->object_id  ) .'"';
+		$attributes .= ($args->has_children) 	    	?	' class="dropdown-toggle" data-toggle="dropdown"' : '';
 
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'>';
@@ -116,4 +124,4 @@ class Pageroll_Bootstrap_Menu extends Walker_Nav_Menu {
 
 	}
 }
- ?>
+?>

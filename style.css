@@ -1,11 +1,11 @@
 /*
-Theme Name:     Pageroll
+Theme Name:     Pageroll (for Driveby Transport)
 Theme URI:      Not yet developed
 Author:         Star Verte LLC
 Author URI:     http://starverte.com/
 Description:    Child theme for Flint; used to display a single webpage with multiple Pages, navigable using a fixed navigation bar.
 Template:       flint
-Version:        0.1.0
+Version:        0.2.0
 License:        GPLv3
 License URI:    license.txt
 Tags:           sparks
@@ -30,8 +30,15 @@ A spark sets a fire ablaze, and similarly the Sparks Framework is made up of 'sp
 
 @import url("../flint/style.css");
 
+body, .home article {
+  padding-top: 50px;
+}
 #masthead {
 	background: #512888;
+  margin-bottom: 1em;
+}
+.home #masthead {
+  min-height: 150px;
 }
 .logo {
 	padding: 20px;
@@ -39,9 +46,13 @@ A spark sets a fire ablaze, and similarly the Sparks Framework is made up of 'sp
 article:focus {
 	outline: none;
 }
-h1,h2,h3,h4,h5,h6,
-a, a:hover, a:focus {
+h1,h2,h3,
+h4,h5,h6, a {
 	color: #512888;
+}
+a:hover, a:focus {
+	color: #672787;
+  text-decoration: none;
 }
 .site-branding {
 	margin-top: 30px;
@@ -50,24 +61,47 @@ a, a:hover, a:focus {
 .site-branding h3 {
 	color: #fff;
 }
-.navbar-inverse .navbar-inner {
+.navbar-inverse {
   background-color: #512888;
-  background-image: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  border: none;
 }
-.page-template-app-php #app-btn {
-	display: none!important;
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  background-color: #31146d;
 }
-@media (max-width: 767px) {
-  body {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .container-fluid {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+.navbar-inverse .navbar-toggle {
+  border-color: #31146d;
+}
+.btn-primary{background-color:#512888;border-color: #672787;}
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{color:#ffffff;background-color:#672787;border-color: #672787;}
+.form-inline .controls > .radio:first-child {
+  padding-top: 0;
+}
+.btn-outline {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 18px 24px;
+  font-weight: 500;
+  color: #fff;
+  background-color: transparent;
+  border-color: #fff;
+  border-color: rgba(255,255,255,.5);
+  transition: all .1s ease-in-out;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  color: #512888;
+  background-color: #fff;
+  border-color: #fff;
+  text-decoration: none;
+}
+#colophon {
+  background: #512888;
+}
+#colophon, #colophon a {
+  color: #fff;
+}
+.site-info {
+  padding: 1em 0;
+}
+@media (min-width: 767px) {
+  .radio-inline { padding-top: 6px; }
 }
